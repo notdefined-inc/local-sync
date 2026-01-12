@@ -1,0 +1,51 @@
+{
+  "name": "@vlcn.io/wa-sqlite",
+  "version": "0.22.0",
+  "type": "module",
+  "main": "src/sqlite-api.js",
+  "types": "src/types/index.d.ts",
+  "homepage": "https://vlcn.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vlcn-io/wa-sqlite"
+  },
+  "files": [
+    "src/sqlite-constants.js",
+    "src/sqlite-api.js",
+    "src/types/*",
+    "src/VFS.js",
+    "src/examples/*",
+    "dist/*",
+    "test/*"
+  ],
+  "scripts": {
+    "build-docs": "typedoc",
+    "start": "web-dev-server --node-resolve",
+    "deep-clean": "rm -rf ./dist || true",
+    "test": "karma start karma.conf.cjs --browsers ChromeHeadless",
+    "test-manual": "karma start karma.conf.cjs --auto-watch --no-single-run --reporters progress"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.1.38",
+    "jasmine-core": "^4.6.0",
+    "comlink": "^4.4.1",
+    "karma": "^6.4.1",
+    "karma-chrome-launcher": "^3.1.1",
+    "karma-jasmine": "^5.1.0",
+    "monaco-editor": "^0.37.1",
+    "puppeteer": "^19.9.1",
+    "sinon": "^15.0.3",
+    "typescript": "^5.0.4"
+  },
+  "dependenciesMeta": {
+    "comlink@4.4.1": {
+      "unplugged": true
+    },
+    "monaco-editor@0.34.1": {
+      "unplugged": true
+    },
+    "sinon@15.0.1": {
+      "unplugged": true
+    }
+  }
+}
