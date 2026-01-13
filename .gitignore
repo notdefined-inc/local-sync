@@ -1,33 +1,57 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.*
+!.env.example
+
 # Dependencies
-node_modules
 node_modules/
-**/node_modules/
-packages/*/node_modules/
+jspm_packages/
+
+# Build artifacts
+dist/
+dist-ssr/
+out/
+build/
+test-results/
+.next/
+.nuxt/
+.vuepress/dist/
+
+# Test/Coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# TypeScript
+*.tsbuildinfo
 
 # Logs
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+vite.log
 
-dist
-dist-ssr
-*.local
+# Temporary and project-specific ignores
+tmp-*/
+.cache/
+.parcel-cache/
+.eslintcache
+.rpt2_cache/
+.rts2_cache_*/
+.node_repl_history
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# Test
-coverage
-test-results
+# Yarn/pnpm specific
+.yarn/
+!.yarn/releases/
+!.yarn/plugins/
+!.yarn/sdks/
+!.yarn/versions/
+.yarn-integrity
+.pnp.*
