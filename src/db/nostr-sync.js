@@ -249,16 +249,16 @@ export const subscribeToEvents = (onEvent, since = 0) => {
         subscription.close();
     }
 
-    const filters = [{
+    const filter = {
         authors: [currentPubkey],
         kinds: [SQL_KIND],
         since: since, // Start from NOW only (or since loading finished)
         limit: 100
-    }];
+    };
 
     console.log('[Nostr] Starting live subscription from:', new Date(since * 1000));
 
-    subscription = pool.subscribeMany(RELAYS, filters, {
+    subscription = pool.subscribeMany(RELAYS, filter, {
         onevent(event) {
             if (isEventApplied(event.id)) {
                 return;

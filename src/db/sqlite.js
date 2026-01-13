@@ -3,6 +3,7 @@
  * Provides in-browser SQL query capabilities using sql.js
  */
 import initSqlJs from 'sql.js';
+import sqlWasmUrl from 'sql.js/dist/sql-wasm.wasm?url';
 
 // Database instance
 let db = null;
@@ -19,8 +20,8 @@ export const initDB = async () => {
     if (db && isInitialized) return db;
 
     const SQL = await initSqlJs({
-        // Use local WASM file to avoid version mismatch
-        locateFile: () => '/sql-wasm.wasm'
+        // Use bundled WASM to match the sql.js package version.
+        locateFile: () => sqlWasmUrl
     });
 
     db = new SQL.Database();
@@ -93,7 +94,7 @@ export const exportDB = () => {
  */
 export const importDB = async (binary) => {
     const SQL = await initSqlJs({
-        locateFile: () => '/sql-wasm.wasm'
+        locateFile: () => sqlWasmUrl
     });
     
     db = new SQL.Database(binary);

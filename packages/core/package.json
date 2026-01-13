@@ -1,0 +1,81 @@
+{
+  "name": "@localsync/core",
+  "version": "0.1.0",
+  "description": "Local-first sync SDK - No backend required",
+  "type": "module",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./types": {
+      "types": "./src/types.ts",
+      "import": "./src/types.ts"
+    },
+    "./utils": {
+      "types": "./src/utils.ts",
+      "import": "./src/utils.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint . --ext .ts",
+    "prepublishOnly": "pnpm build && pnpm test"
+  },
+  "keywords": [
+    "local-first",
+    "sync",
+    "p2p",
+    "offline-first",
+    "crdt",
+    "sqlite",
+    "nostr",
+    "webrtc",
+    "e2ee"
+  ],
+  "author": "LocalSync Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/localsync.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/localsync/issues"
+  },
+  "homepage": "https://github.com/yourusername/localsync#readme",
+  "dependencies": {
+    "@noble/ciphers": "^2.1.1",
+    "@noble/curves": "^2.0.1",
+    "@noble/hashes": "^1.4.0",
+    "nostr-tools": "^2.10.4",
+    "pako": "^2.1.0"
+  },
+  "devDependencies": {
+    "@localsync/engine-crsqlite-web": "workspace:*",
+    "@localsync/control-nostr": "workspace:*",
+    "@localsync/transport-webrtc": "workspace:*",
+    "@localsync/blob-local": "workspace:*",
+    "@types/node": "^25.0.6",
+    "@types/pako": "^2.0.3",
+    "typescript": "^5.9.3",
+    "vite": "^5.1.0",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^4.0.16"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

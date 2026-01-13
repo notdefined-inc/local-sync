@@ -1,4 +1,3 @@
 packages:
+  - '.'
   - 'packages/*'
-  - 'adhd-dashboard'
-  - 'adhd-dashboard/packages/*'
